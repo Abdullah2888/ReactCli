@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React, { useEffect } from 'react'
 
 const Splash = ({navigation}) => {
-    useEffect(()=>{
+    useEffect(()=>{ 
         setTimeout(() => {
             navigation.navigate('LoginScreen')
         }, 2000)
