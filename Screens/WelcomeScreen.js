@@ -6,7 +6,7 @@ const WelcomeScreen = ({navigation}) => {
       navigation.navigate('LoginScreen')
     };
   return (
-    <View style={styles.container}>
+    <View style={styles.container}> 
       <Image source={require('../Images/wel.png')} style={styles.logo} />
       <Text style={styles.title}>Welcome to My App</Text>
       <Text style={styles.subtitle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
