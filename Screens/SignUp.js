@@ -23,7 +23,7 @@ const SignUp = ({ navigation }) => {
                 }
 
                 console.error(error);
-            });
+            }); 
     }
 
     return (
