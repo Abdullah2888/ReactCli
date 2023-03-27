@@ -8,7 +8,7 @@ import WelcomeScreen from './Screens/WelcomeScreen';
 
 const Stack = createNativeStackNavigator();
 
-function App() {
+function App() { 
   return (
     
     <NavigationContainer>
