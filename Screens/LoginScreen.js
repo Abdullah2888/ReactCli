@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState(''); 
+    const [password, setPassword] = useState('');
     const navigation = useNavigation();
 
     const handleLogin = () => {
@@ -18,6 +18,9 @@ const LoginScreen = () => {
             .catch(error => {
                 console.error(error);
             });
+    }
+    const gotosignup = () => {
+        navigation.navigate('SignUp');
     }
 
     return (
@@ -36,9 +39,14 @@ const LoginScreen = () => {
                 value={password}
                 onChangeText={setPassword}
             />
-            <TouchableOpacity style={styles.button} onPress={handleLogin}>
-                <Text style={styles.buttonText}>Login</Text>
-            </TouchableOpacity>
+            <View style={{ flexDirection: 'row' }}>
+                <TouchableOpacity style={styles.button} onPress={handleLogin}>
+                    <Text style={styles.buttonText}>Login</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={gotosignup}>
+                    <Text style={styles.buttonText}>SignUp</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 };
@@ -48,14 +56,16 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: 'lightblue',
     },
     title: {
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 30,
+        color: 'black',
     },
     input: {
-        width: '80%',
+        width: '50%',
         height: 40,
         borderWidth: 1,
         borderColor: 'gray',
@@ -67,6 +77,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'blue',
         padding: 10,
         borderRadius: 5,
+        margin: 10,
     },
     buttonText: {
         color: 'white',

@@ -1,10 +1,16 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React, { useEffect } from 'react'
+import React, { useEffect , useState } from 'react'
+import { NavigationContainer } from '@react-navigation/native';
+import Auth from '@react-native-firebase/auth';
 
 const Splash = ({navigation}) => {
+
     useEffect(()=>{ 
         setTimeout(() => {
-            navigation.navigate('LoginScreen')
+          Auth().onAuthStateChanged(function (user) {
+            const routeName = user !== null ? "WelcomeScreen":"LoginScreen"
+            navigation.navigate(routeName);
+          });
         }, 2000)
     },[])
   return (

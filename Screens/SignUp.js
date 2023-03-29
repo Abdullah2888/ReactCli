@@ -23,12 +23,12 @@ const SignUp = ({ navigation }) => {
                 }
 
                 console.error(error);
-            }); 
+            });
     }
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Sign Screen</Text>
+            <Text style={styles.title}>SignUp Screen</Text>
             <TextInput
                 style={styles.input}
                 placeholder="Email"
@@ -42,14 +42,16 @@ const SignUp = ({ navigation }) => {
                 value={password}
                 onChangeText={setPassword}
             />
-            <TouchableOpacity style={styles.button} onPress={handleLogin}>
-                <Text style={styles.buttonText}>Sign Up</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => {
-                navigation.navigate('LoginScreen')
-            }}>
-                <Text style={styles.buttonText}>Go To Sign In Page</Text>
-            </TouchableOpacity>
+            <View style={{flexDirection:'row'}}>
+                <TouchableOpacity style={styles.button} onPress={handleLogin}>
+                    <Text style={styles.buttonText}>Sign Up</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={() => {
+                    navigation.navigate('LoginScreen')
+                }}>
+                    <Text style={styles.buttonText}>Go To Login</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 };
@@ -59,14 +61,16 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: 'lightblue',
     },
     title: {
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 30,
+        color: 'black'
     },
     input: {
-        width: '80%',
+        width: '50%',
         height: 40,
         borderWidth: 1,
         borderColor: 'gray',
@@ -78,6 +82,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'blue',
         padding: 10,
         borderRadius: 5,
+        margin:5,
     },
     buttonText: {
         color: 'white',
