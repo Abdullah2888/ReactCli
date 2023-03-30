@@ -11,7 +11,7 @@ const WelcomeScreen = ({navigation}) => {
       <TouchableOpacity style={styles.button} onPress={async()=>{
         await Auth().signOut();
         navigation.navigate("LoginScreen");
-      }}>
+      }}> 
         <Text style={styles.buttonText}>Logout</Text>
       </TouchableOpacity>
     </View>
