@@ -18,7 +18,7 @@ const Splash = ({navigation}) => {
       <Text style={{fontSize:20 , fontWeight:'800' , color:'black'}}>Firebase</Text>
       <Text style={{fontSize:20 , fontWeight:'800' , color:'red'}}>Social App</Text>
     </View>
-  )
+  ) 
 }
 
 const styles = StyleSheet.create({
