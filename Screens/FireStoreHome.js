@@ -8,6 +8,8 @@ const FireStoreHome = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [users, setUsers] = useState([]);
+
+    //to show data 
     useEffect(() => {
         const subscriber = firestore()
             .collection('Users')
@@ -28,6 +30,7 @@ const FireStoreHome = () => {
         return () => subscriber();
     }, []);
 
+    //to pick image
     const pickImage = async () => {
         try {
           const image = await ImagePicker.openPicker({
@@ -41,7 +44,7 @@ const FireStoreHome = () => {
         }
       };
       
-
+    //to upload image
     const uploadimage = async () => {
         const filename = image.substring(image.lastIndexOf('/') + 1);
         console.log(filename);
