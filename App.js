@@ -8,16 +8,15 @@ import FireStoreDisplay from './Screens/FireStoreDisplay';
 
 const Stack = createNativeStackNavigator();
 
-function App() {
-  
-  return (
 
+function App() {
+
+  return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{
         headerShown: false
       }}>
-
-        <Stack.Screen name="Splash" options={{ headerShown: false }} component={Splash} /> 
+        <Stack.Screen name="Splash" options={{ headerShown: false }} component={Splash} />
         <Stack.Screen name="FireStoreLogin" component={FireStoreLogin} />
         <Stack.Screen name="FireStoreDisplay" component={FireStoreDisplay} />
         <Stack.Screen name="FireStoreHome" component={FireStoreHome} />

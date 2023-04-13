@@ -3,11 +3,15 @@ import React, { useState, useEffect } from 'react'
 import ImagePicker from 'react-native-image-crop-picker';
 import firestore from '@react-native-firebase/firestore';
 import storage from '@react-native-firebase/storage';
+import CalendarPicker from 'react-native-calendar-picker';
+import moment from 'moment';
 const FireStoreHome = () => {
     const [image, setImage] = useState(null)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [users, setUsers] = useState([]);
+    const [selectedStartDate, setSelectedStartDate] = useState(null);
+    const [selectedEndDate, setSelectedEndDate] = useState(null);
 
     //to show data 
     useEffect(() => {
@@ -30,20 +34,33 @@ const FireStoreHome = () => {
         return () => subscriber();
     }, []);
 
+    const onDateChange = (date, type) => {
+        if (type === 'END_DATE') {
+            const endDate = moment(date).endOf('day').format('YYYY-MM-DD HH:mm:ss');
+
+            setSelectedEndDate(endDate);
+        } else {
+            const startDate = moment(date).startOf('day').format('YYYY-MM-DD HH:mm:ss');
+            setSelectedStartDate(startDate);
+            setSelectedEndDate(null);
+        }
+    };
+
+
     //to pick image
     const pickImage = async () => {
         try {
-          const image = await ImagePicker.openPicker({
-            width: 300,
-            height: 400,
-            cropping: true
-          });
-          setImage(image.path)
+            const image = await ImagePicker.openPicker({
+                width: 300,
+                height: 400,
+                cropping: true
+            });
+            setImage(image.path)
         } catch (error) {
-          console.log(error);
+            console.log(error);
         }
-      };
-      
+    };
+
     //to upload image
     const uploadimage = async () => {
         const filename = image.substring(image.lastIndexOf('/') + 1);
@@ -60,13 +77,15 @@ const FireStoreHome = () => {
                 email: email,
                 password: password,
                 image: url,
+                startDate: selectedStartDate,
+                endDate: selectedEndDate,
             })
             .then(() => {
                 console.log('User added!');
                 setEmail('')
                 setPassword('')
                 setImage(null)
-                
+
             })
     }
     return (
@@ -81,11 +100,11 @@ const FireStoreHome = () => {
                     </View>
                 )}
                 ListFooterComponent={
-                    <View style={{marginTop:10}}>
+                    <View style={{ marginTop: 10 }}>
                         {image !== null ? (
                             <Image source={{ uri: image }} style={{ width: 200, height: 100 }} />
                         ) : null}
-                        <TouchableOpacity style={styles.button} onPress={() => { pickImage()}}>
+                        <TouchableOpacity style={styles.button} onPress={() => { pickImage() }}>
                             <Text style={styles.buttonText}>Open Camera</Text>
                         </TouchableOpacity>
                         <TextInput
@@ -100,6 +119,14 @@ const FireStoreHome = () => {
                             secureTextEntry={true}
                             value={password}
                             onChangeText={setPassword}
+                        />
+                        <CalendarPicker
+                            startFromMonday={true}
+                            allowRangeSelection={true}
+                            todayBackgroundColor="#f2e6ff"
+                            selectedDayColor="#7300e6"
+                            selectedDayTextColor="#FFFFFF"
+                            onDateChange={onDateChange}
                         />
                         <TouchableOpacity style={styles.button} onPress={() => { uploadimage(); }}>
                             <Text style={styles.buttonText}>Upload Image</Text>
