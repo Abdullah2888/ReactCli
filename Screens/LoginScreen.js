@@ -13,7 +13,8 @@ const LoginScreen = () => {
             .signInWithEmailAndPassword(email, password)
             .then(() => {
                 navigation.navigate('WelcomeScreen');
-                // console.warn("Login successful");
+                setEmail('');
+                setPassword('');
             })
             .catch(error => {
                 console.error(error);

@@ -42,10 +42,15 @@ const FireStoreLogin = ({navigation}) => {
                 <TouchableOpacity style={styles.button} onPress={handleLogin}>
                     <Text style={styles.buttonText}>Login</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={() => {
+                {/* <TouchableOpacity style={styles.button} onPress={() => {
                     navigation.navigate('FireStoreDisplay')
                 }}>
                     <Text style={styles.buttonText}>displayscreen</Text>
+                </TouchableOpacity> */}
+                <TouchableOpacity style={styles.button} onPress={() => {
+                    navigation.navigate('ProfileScreen')
+                }}>
+                    <Text style={styles.buttonText}>ProfileScreen</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button} onPress={() => {
                     navigation.navigate('FireStoreHome')

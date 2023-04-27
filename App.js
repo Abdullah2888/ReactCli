@@ -1,27 +1,24 @@
-import * as React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Splash from './Screens/Splash';
-import FireStoreLogin from './Screens/FireStoreLogin';
-import FireStoreHome from './Screens/FireStoreHome';
-import FireStoreDisplay from './Screens/FireStoreDisplay';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import HomeDesign from './Screens/HomeDesign';
+import Login from './Screens/Design/Login';
+import SignUp from './Screens/Design/SignUp';
 
 const Stack = createNativeStackNavigator();
-
-
-function App() {
-
+const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{
-        headerShown: false
-      }}>
-        <Stack.Screen name="Splash" options={{ headerShown: false }} component={Splash} />
-        <Stack.Screen name="FireStoreLogin" component={FireStoreLogin} />
-        <Stack.Screen name="FireStoreDisplay" component={FireStoreDisplay} />
-        <Stack.Screen name="FireStoreHome" component={FireStoreHome} />
+      <Stack.Navigator screenOptions={{headerShown:false}}>
+        <Stack.Screen name="HomeDesign" component={HomeDesign}/>
+        <Stack.Screen name="SignUp" component={SignUp}/>
+        <Stack.Screen name="Login" component={Login}/>
       </Stack.Navigator>
     </NavigationContainer>
-  );
+  )
 }
-export default App 
+
+export default App
+
+const styles = StyleSheet.create({})

@@ -5,7 +5,7 @@ import firestore from '@react-native-firebase/firestore';
 import storage from '@react-native-firebase/storage';
 import CalendarPicker from 'react-native-calendar-picker';
 import moment from 'moment';
-const FireStoreHome = () => {
+const FireStoreHome = ({navigation , item}) => {
     const [image, setImage] = useState(null)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -93,10 +93,16 @@ const FireStoreHome = () => {
             <FlatList
                 data={users}
                 renderItem={({ item }) => (
-                    <View>
+                    <View style={{borderColor:"red" , borderWidth:2}}>
                         <Text>User ID: {item.email}</Text>
                         <Image source={{ uri: item.image }} style={{ width: 100, height: 50 }} />
-
+                        <Text>StartDate: {item.startDate}</Text>
+                        <Text>EndDate: {item.endDate}</Text>
+                        <TouchableOpacity style={styles.button} onPress={() => {
+                            navigation.navigate('ShowDates' ,{item:item})
+                        }}>
+                            <Text style={styles.buttonText}>Move</Text>
+                        </TouchableOpacity>
                     </View>
                 )}
                 ListFooterComponent={
@@ -146,6 +152,7 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 5,
         margin: 10,
+        width: 80,
     },
     buttonText: {
         color: 'white',

@@ -7,11 +7,11 @@ const Splash = ({navigation}) => {
 
     useEffect(()=>{ 
         setTimeout(() => {
-          // Auth().onAuthStateChanged(function (user) {
-          //   const routeName = user !== null ? "WelcomeScreen":"LoginScreen"
-          //   navigation.navigate(routeName);
-          // });    
-          navigation.navigate('FireStoreLogin');
+          Auth().onAuthStateChanged(function (user) {
+            const routeName = user !== null ? "WelcomeScreen":"LoginScreen"
+            navigation.navigate(routeName);
+          });    
+          // navigation.navigate('SignUp');
         }, 2000)
     },[])
   return (
