@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
-import Background from '../Background'
+import Background from './Background'
 import { darkGreen } from './Constant'
 import Field from './Field'
 import Btn from './Btn'
@@ -12,7 +12,7 @@ const Login = ({ navigation }) => {
                 <Text style={{ color: 'white', fontSize: 64, fontWeight: 'bold', marginVertical: 10 }}>Register</Text>
                 <Text style={{ color: 'white', fontSize: 22, fontWeight: 'bold', marginBottom: 20 }}>Create a new account</Text>
                 <View style={{ backgroundColor: 'white', height: 700, width: 460, borderTopLeftRadius: 130, paddingTop: 30, alignItems: 'center' }}>
-                    <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 30 }}>
+                    <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 220 }}>
                         <View style={{ alignItems: 'center' ,paddingRight:20}}>
                             <Field placeholder="First Name"
                                 style={{

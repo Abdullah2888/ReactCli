@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
-import Background from './Background'
+import Background from './Design/Background'
 import Btn from './Design/Btn'
 import { darkGreen, green } from './Design/Constant'
 

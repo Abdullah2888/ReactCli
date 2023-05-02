@@ -4,7 +4,7 @@ import React from 'react'
 const Background = ({ children }) => {
     return (
         <View>
-            <ImageBackground source={require("../Images/leaves.jpg")} style={{ height:'100%' }} />
+            <ImageBackground source={require("../../Images/leaves.jpg")} style={{ height:'100%' }} />
             <View style={{ position: 'absolute' }}>
                 {children}
             </View>

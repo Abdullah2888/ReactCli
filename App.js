@@ -5,15 +5,19 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeDesign from './Screens/HomeDesign';
 import Login from './Screens/Design/Login';
 import SignUp from './Screens/Design/SignUp';
+import BarberDesign from './Screens/Design/BarberDesign';
+import BarberWelcome from './Screens/Design/BarberWelcome';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown:false}}>
-        <Stack.Screen name="HomeDesign" component={HomeDesign}/>
+        {/* <Stack.Screen name="HomeDesign" component={HomeDesign}/>
         <Stack.Screen name="SignUp" component={SignUp}/>
-        <Stack.Screen name="Login" component={Login}/>
+        <Stack.Screen name="Login" component={Login}/> */}
+        <Stack.Screen name="BarberDesign" component={BarberDesign}/>
+        <Stack.Screen name="BarberWelcome" component={BarberWelcome}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
