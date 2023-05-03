@@ -5,8 +5,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import Fontisto from 'react-native-vector-icons/Fontisto'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-const BarberWelcome = () => {
+const BarberWelcome = ({navigation}) => {
     return (
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:60}}>
         <View style={{ flex: 1 }}>
             <View style={{ marginTop: 10, padding: 3, flexDirection: 'row', alignItems: 'center' }}>
                 <TouchableOpacity>
@@ -20,7 +21,7 @@ const BarberWelcome = () => {
                 </TouchableOpacity>
             </View>
 
-            <View style={{ backgroundColor: '#f7eee9', width: '100%', height: Dimensions.get('screen').height - 500 }}>
+            <View style={{ backgroundColor: '#f7eee9', width: '100%', height: Dimensions.get('screen').height - 400 }}>
                 <Text style={{ fontSize: 20, fontWeight: 'bold', marginTop: 10, padding: 15, color: 'black' }}>Welcome, John</Text>
                 <TextInput placeholder='     Search' style={{ backgroundColor: 'white', borderRadius: 20, margin: 20 }} />
                 <Text style={{ fontSize: 20, fontWeight: 'bold', marginTop: 3, padding: 10, marginLeft: 10, color: 'black' }}>Your Last Visit</Text>
@@ -35,14 +36,16 @@ const BarberWelcome = () => {
                     </View>
                     <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
                         <Text></Text>
-                        <TouchableOpacity style={{ borderWidth: 1, borderColor: 'white', padding: 10, width: '25%', marginTop: 0, marginRight: 30, position: 'absolute', top: -55, right: 0 }}>
+                        <TouchableOpacity style={{ borderWidth: 1, borderColor: 'white', padding: 10, width: '25%', marginTop: 0, marginRight: 30, position: 'absolute', top: -55, right: 0 }} onPress={()=>{
+                            navigation.navigate('Barberdetail')
+                        }}>
                             <Text style={{ color: 'white', textAlign: 'center' }}>Book</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
             </View>
 
-            <View style={{ backgroundColor: '#917659', width: '100%', height: '35%' }}>
+            <View style={{ backgroundColor: '#917659', width: '100%', height: '35%'}}>
                 <Text style={{ color: 'white', fontSize: 20, margin: 15 }}>Services</Text>
                 <View style={{ flexDirection: 'row' }}>
                     <TouchableOpacity style={{ borderWidth: 1, borderColor: 'white', borderRadius: 5, marginRight: 10, padding: 23, width: '33%', height: 200 }}>
@@ -63,7 +66,7 @@ const BarberWelcome = () => {
                 </View>
             </View>
 
-            <ScrollView contentContainerStyle={{backgroundColor:'#1b1b1b' , paddingBottom:15}}>
+            
                 <View style={{ backgroundColor: '#1b1b1b', width: '100%', height: '90%' }}>
                     <Text style={{color:'white' , marginTop:7 , marginLeft:12}}>Available Barbers</Text>
                     <View style={{flexDirection:'row'}}>
@@ -80,8 +83,9 @@ const BarberWelcome = () => {
                         </Text>                       
                     </View>
                 </View>
-            </ScrollView>
+
         </View>
+        </ScrollView>
     )
 }
 

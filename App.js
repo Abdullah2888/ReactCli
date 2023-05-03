@@ -7,7 +7,7 @@ import Login from './Screens/Design/Login';
 import SignUp from './Screens/Design/SignUp';
 import BarberDesign from './Screens/Design/BarberDesign';
 import BarberWelcome from './Screens/Design/BarberWelcome';
-
+import Barberdetail from './Screens/Design/Barberdetail';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
@@ -18,6 +18,7 @@ const App = () => {
         <Stack.Screen name="Login" component={Login}/> */}
         <Stack.Screen name="BarberDesign" component={BarberDesign}/>
         <Stack.Screen name="BarberWelcome" component={BarberWelcome}/>
+        <Stack.Screen name="Barberdetail" component={Barberdetail}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

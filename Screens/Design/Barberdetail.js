@@ -55,7 +55,7 @@ const Barberdetail = () => {
                         </View>
                         <Text style={{ fontSize: 20 }}>{item.label}</Text>
                       </View>
-                      }
+                      : null}
 
                   </View>
                 </TouchableOpacity>
