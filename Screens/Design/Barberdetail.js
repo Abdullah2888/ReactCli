@@ -7,18 +7,40 @@ import RadioButtonRN from 'radio-buttons-react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Barberdetail = () => {
-  const [active, setactive] = useState();
   const data = [
     {
-      label: 'male'
+      id: 1,
+      label: 'Basic HairCut',
+      price: '25$',
     },
     {
-      label: 'female'
+      id: 2,
+      label: 'Normal HairCut',
+      price: '35$',
     },
     {
-      label: 'other'
-    }
+      id: 3,
+      label: 'Premium HairCut',
+      price: '45$',
+    },
+    {
+      id: 4,
+      label: 'Shave',
+      price: '15$',
+    },
+    {
+      id: 5,
+      label: 'Beard',
+      price: '20$',
+    },
+    {
+      id: 6,
+      label: 'Line Up',
+      price: '25$',
+    },
+
   ];
+  const [active, setactive] = useState(1);
 
   return (
     <ScrollView contentContainerStyle={{ paddingBottom: 30 }}>
@@ -35,31 +57,37 @@ const Barberdetail = () => {
           </TouchableOpacity>
         </View>
 
-        <View style={{ width: Dimensions.get('screen').width, height: Dimensions.get('screen').height - 140, backgroundColor: '#f7eee9', marginTop: 10 }}>
-          <View style={{ borderWidth: 1, borderColor: '#958171', width: Dimensions.get('screen').width - 40, height: Dimensions.get('screen').height - 190, margin: 20, borderRadius: 9 }}>
+        <View style={{ width: Dimensions.get('screen').width, height: Dimensions.get('screen').height - 160, backgroundColor: '#f7eee9', marginTop: 10 }}>
+          <View style={{ borderWidth: 1, borderColor: '#958171', width: Dimensions.get('screen').width - 40, height: Dimensions.get('screen').height - 180, margin: 20, borderRadius: 9 }}>
             <View style={{ alignItems: 'center', marginTop: 15 }}>
               <FontAwesome5 name="ruler-combined" size={75} color="#857865" />
-              <Text style={{ marginTop: 5 }}>Shaving</Text>
-              <Text style={{ fontStyle: 'italic', marginTop: 5 }}>CHOOSE A SERVICE</Text>
-              <Text style={{ margin: 20, textAlign: 'center' }}>In this example, we use the Ionicons component from the expo/vector-icons package to display an icon.  of the icon, respectively.</Text>
+              <Text style={{ marginTop: 5, color: 'black', fontSize: 20 }}>Shaving</Text>
+              <Text style={{ fontStyle: 'italic', marginTop: 5, color: 'black', fontSize: 12 }}>CHOOSE A SERVICE</Text>
+              <Text style={{ margin: 20, textAlign: 'center', color: 'black' }}>In this example, we use the Ionicons component from the expo/vector-icons package to display an icon.  of the icon, respectively.</Text>
             </View>
             <View style={{ borderBottomColor: '#8e7a68', borderBottomWidth: 0.5, width: '90%', marginLeft: 20, marginRight: 20, opacity: 0.4 }}></View>
-            <View style={{ marginTop: 10 }}>
-              {data.map((item) => (
-                <TouchableOpacity onPress={()=>setactive(item.label)}>
-                  <View style={{ flexDirection: 'row', marginTop: 5, alignItems: 'center' }}>
-                    {setactive == item.label ?
-                      <View>
-                        <View style={{ width: 25, height: 25, borderColor: '#857865', borderWidth: 2, borderRadius: 15 }}>
-                          <View style={{ backgroundColor: '#857865', width: '90%', height: '90%', margin: 1, borderRadius: 45 }}></View>
-                        </View>
-                        <Text style={{ fontSize: 20 }}>{item.label}</Text>
-                      </View>
-                      : null}
+            <View style={{ marginTop: 10 , width:'100%'}}>
+              {data.map((item, index) =>
+                <TouchableOpacity onPress={() => setactive(item.id)} key={index}>
+                  <View style={{ flexDirection: 'row', marginTop: 5, marginLeft: 18 }}>
 
+                    <View style={{ width: 23, height: 23, backgroundColor: '#e5d3c7', borderRadius: 15, marginBottom: 20 }}>
+                      {active == item.id ? <View style={{ backgroundColor: '#937656', width: '60%', height: '60%', margin: 4.5, borderRadius: 50, marginBottom: 20 }}></View> : null}
+                      <Text></Text>
+                    </View>
+                    <Text style={{ fontSize: 16, fontWeight: 'bold', color: 'black', marginBottom: 20, marginLeft: 5 }}>{item.label}</Text>
+                    <View style={{ alignItems: 'flex-end' ,flex:1 , marginRight:15}}>
+                      <Text style={{textAlign:'center'}}>{item.price}</Text>
+                    </View>
                   </View>
                 </TouchableOpacity>
-              ))}
+              )}
+            </View>
+
+            <View style={{ alignItems: 'center', marginTop: 15 }}>
+              <TouchableOpacity style={{ borderColor: '#958171', width: '60%', height: '27%', borderWidth: 1 }}>
+                <Text style={{ textAlign: 'center', fontSize: 15, fontWeight: 'bold', color: 'black', padding: 2, margin: 5 }}>BOOK AN APPOINTMENT </Text>
+              </TouchableOpacity>
             </View>
           </View>
 
