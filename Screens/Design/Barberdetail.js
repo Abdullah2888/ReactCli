@@ -61,9 +61,9 @@ const Barberdetail = () => {
           <View style={{ borderWidth: 1, borderColor: '#958171', width: Dimensions.get('screen').width - 40, height: Dimensions.get('screen').height - 180, margin: 20, borderRadius: 9 }}>
             <View style={{ alignItems: 'center', marginTop: 15 }}>
               <FontAwesome5 name="ruler-combined" size={75} color="#857865" />
-              <Text style={{ marginTop: 5, color: 'black', fontSize: 20 }}>Shaving</Text>
-              <Text style={{ fontStyle: 'italic', marginTop: 5, color: 'black', fontSize: 12 }}>CHOOSE A SERVICE</Text>
-              <Text style={{ margin: 20, textAlign: 'center', color: 'black' }}>In this example, we use the Ionicons component from the expo/vector-icons package to display an icon.  of the icon, respectively.</Text>
+              <Text style={{ marginTop: 5, color: 'black', fontSize: 20 , fontFamily:'Poppins-Regular'}}>Shaving</Text>
+              <Text style={{ fontFamily:'Poppins-Regular', marginTop: 5, color: 'black', fontSize: 12 , letterSpacing:2}}>CHOOSE A SERVICE</Text>
+              <Text style={{ margin: 20, textAlign: 'center', color: 'black' , fontFamily:'Poppins-Regular'}}>In this example, we use the Ionicons component from the expo/vector-icons package to display an icon.</Text>
             </View>
             <View style={{ borderBottomColor: '#8e7a68', borderBottomWidth: 0.5, width: '90%', marginLeft: 20, marginRight: 20, opacity: 0.4 }}></View>
             <View style={{ marginTop: 10 , width:'100%'}}>
@@ -75,9 +75,9 @@ const Barberdetail = () => {
                       {active == item.id ? <View style={{ backgroundColor: '#937656', width: '60%', height: '60%', margin: 4.5, borderRadius: 50, marginBottom: 20 }}></View> : null}
                       <Text></Text>
                     </View>
-                    <Text style={{ fontSize: 16, fontWeight: 'bold', color: 'black', marginBottom: 20, marginLeft: 5 }}>{item.label}</Text>
+                    <Text style={{ fontSize: 15, fontFamily:'Poppins-Regular', color: 'black', marginBottom: 20, marginLeft: 5 }}>{item.label}</Text>
                     <View style={{ alignItems: 'flex-end' ,flex:1 , marginRight:15}}>
-                      <Text style={{textAlign:'center'}}>{item.price}</Text>
+                      <Text style={{textAlign:'center' , fontFamily:'Poppins-Regular'}}>{item.price}</Text>
                     </View>
                   </View>
                 </TouchableOpacity>
@@ -86,7 +86,7 @@ const Barberdetail = () => {
 
             <View style={{ alignItems: 'center', marginTop: 15 }}>
               <TouchableOpacity style={{ borderColor: '#958171', width: '60%', height: '27%', borderWidth: 1 }}>
-                <Text style={{ textAlign: 'center', fontSize: 15, fontWeight: 'bold', color: 'black', padding: 2, margin: 5 }}>BOOK AN APPOINTMENT </Text>
+                <Text style={{ textAlign: 'center', fontSize: 15, fontFamily:'Poppins-Regular', color: 'black', padding: 2, margin: 5 }}>BOOK AN APPOINTMENT </Text>
               </TouchableOpacity>
             </View>
           </View>

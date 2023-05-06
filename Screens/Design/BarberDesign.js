@@ -16,19 +16,19 @@ const BarberDesign = ({navigation}) => {
             <View style={{alignItems:'center'}}>
                 <TextInput style={{width:'80%' , marginBottom: 25 , borderColor:'white' , borderTopWidth:0 , borderLeftWidth: 0 , borderRightWidth:0 , borderWidth:1}} placeholder='Email' placeholderTextColor='white'/>
                 <TextInput style={{width:'80%' , borderColor:'white' , borderTopWidth:0 , borderLeftWidth: 0 , borderRightWidth:0 , borderWidth:1}} placeholder='Password' placeholderTextColor='white'/>
-                <Text style={{color:'white' , marginTop:10}}>Forgot Password ?</Text>
+                <Text style={{color:'white' , fontFamily:'Poppins-Regular' ,marginTop:10}}>Forgot Password ?</Text>
             </View>
             <View style={{alignItems:'center' , marginTop:40}}>
                 <TouchableOpacity style={{backgroundColor:'#917659' , padding:10 , width:'45%'}} onPress={()=>{
                     navigation.navigate("BarberWelcome")
                 }}>
-                    <Text style={{color:'white' , textAlign:'center' , fontSize:15 , fontWeight:'bold'}}>LOG IN</Text>
+                    <Text style={{color:'white' , textAlign:'center' ,letterSpacing:2 ,  fontSize:16 , fontFamily:'Poppins-SemiBold'}}>LOG IN</Text>
                 </TouchableOpacity>
             </View>
 
             <View style={{alignItems:'center' , marginTop:20}}>
-                <Text style={{color:'#917659'}}>Don't Have an Account ?</Text>
-                <Text style={{color:'white', marginTop:6 , fontSize:18}}>Create an Account.</Text>
+                <Text style={{color:'#917659' , fontFamily:'Poppins-Regular'}}>Don't Have an Account ?</Text>
+                <Text style={{color:'white', marginTop:6 , fontSize:17 , fontFamily:'Poppins-Regular'}}>Create an Account.</Text>
             </View>
         </View>
     )
