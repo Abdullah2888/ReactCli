@@ -8,12 +8,7 @@ import SignUp from './Screens/Design/SignUp';
 import BarberDesign from './Screens/Design/BarberDesign';
 import BarberWelcome from './Screens/Design/BarberWelcome';
 import Barberdetail from './Screens/Design/Barberdetail';
-import TestLogin from './Screens/Test/TestLogin';
-import TestSignup from './Screens/Test/TestSignup';
-import OicScreen from './Screens/Test/OicScreen';
-import PoliceScreen from './Screens/Test/PoliceScreen';
-import ComplaintScreen from './Screens/Test/ComplaintScreen';
-import SplashScreen from './Screens/Test/SplashScreen';
+
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
@@ -25,12 +20,7 @@ const App = () => {
         <Stack.Screen name="BarberDesign" component={BarberDesign}/>
         <Stack.Screen name="BarberWelcome" component={BarberWelcome}/>
         <Stack.Screen name="Barberdetail" component={Barberdetail}/>
-        {/* <Stack.Screen name="SplashScreen" component={SplashScreen}/>
-        <Stack.Screen name="TestSignup" component={TestSignup}/>
-        <Stack.Screen name="TestLogin" component={TestLogin}/>
-        <Stack.Screen name="OicScreen" component={OicScreen}/>
-        <Stack.Screen name="PoliceScreen" component={PoliceScreen}/>
-        <Stack.Screen name="ComplaintScreen" component={ComplaintScreen}/> */}
+  
       </Stack.Navigator>
     </NavigationContainer>
   )
