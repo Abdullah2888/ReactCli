@@ -8,49 +8,61 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 const BarberWelcome = ({ navigation }) => {
   return (
     <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 30 }}>
-      <View style={{ flex: 1}}>
-        <View style={{ padding: 3, flexDirection: 'row' , margin:7 }}>
+      <View style={{ flex: 1 }}>
+        <View style={{ padding: 3, flexDirection: 'row', margin: 7 }}>
           <TouchableOpacity>
             <EvilIcons name="user" size={40} color="black" />
           </TouchableOpacity>
 
-          <Image source={require("../../Images/barber.png")} style={{ height: Dimensions.get('screen').height - 800, width: Dimensions.get('screen').width - 80, resizeMode: 'contain', alignItems: 'center' }} />
+          <Image source={require("../../Images/barber.png")} style={{ height: '90%' , width:'80%', resizeMode: 'contain'}} />
 
           <TouchableOpacity>
             <Ionicons name="reorder-three-outline" size={27} color="#776755" />
           </TouchableOpacity>
         </View>
       </View>
+
       <View style={{ flex: 1 }}>
         <View style={{ width: '100%', height: Dimensions.get('screen').height / 2, backgroundColor: '#f7eee9' }}>
           <Text style={{ fontSize: 20, marginTop: 10, padding: 15, color: 'black', fontFamily: 'Poppins-Regular' }}>Welcome John</Text>
           <TextInput placeholder='     Search' style={{ backgroundColor: 'white', borderRadius: 20, margin: 20 }} />
           <Text style={{ fontSize: 20, fontFamily: 'Poppins-Regular', marginTop: 3, padding: 10, marginLeft: 10, color: 'black' }}>Your Last Visit</Text>
           <View style={{ backgroundColor: '#1b1b1b', width: '90%', height: Dimensions.get('screen').height / 6, marginLeft: 18, borderRadius: 10 }}>
-            <View>
-              <Text style={{ color: 'white', fontSize: 17, marginLeft: 15, marginTop: 9, fontFamily: 'Poppins-Regular' }}>The New Barber Shop</Text>
-              <Text style={{ color: 'white', fontSize: 11, marginLeft: 15, marginTop: 7, fontFamily: 'Poppins-Regular' }}>HAIR STYLING SPECIALISTS</Text>
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginRight: 15, marginLeft: 10, marginTop: 10 }}>
-                <View>
-                  <TouchableOpacity>
-                    <View style={{ flexDirection: 'row' }}>
-                      <Ionicons name="ios-location-outline" size={25} color="#917659" />
-                      <Text style={{ color: '#917659', fontFamily: 'Poppins-Regular' }}>1.5 km</Text>
-                    </View>
-                  </TouchableOpacity>
+            <View style={{ flexDirection: 'row' }}>
+              <View style={{ flex: 2 , alignItems:'flex-start'}}>
+
+                <Text style={{ color: 'white', fontSize: 17, marginLeft: 15, marginTop: 9, fontFamily: 'Poppins-Regular' }}>The New Barber Shop</Text>
+                <Text style={{ color: 'white', fontSize: 11, marginLeft: 15, marginTop: 7, fontFamily: 'Poppins-Regular' }}>HAIR STYLING SPECIALISTS</Text>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginRight: 15, marginLeft: 10, marginTop: 10 }}>
+                  <View>
+                    <TouchableOpacity>
+                      <View style={{ flexDirection: 'row' }}>
+                        <Ionicons name="ios-location-outline" size={25} color="#917659" />
+                        <Text style={{ color: '#917659', fontFamily: 'Poppins-Regular' }}>1.5 km</Text>
+                      </View>
+                    </TouchableOpacity>
+                  </View>
+
                 </View>
-                <View>
-                  <TouchableOpacity style={{ borderWidth: 1, borderColor: 'white', padding: 10, width: '100%' }}onPress={()=>{
+              </View>
+
+
+              <View style={{ flex: 1 , justifyContent:'center' , marginTop:20}}>
+                <View style={{ width: '75%' , height:'53%'}}>
+                  <TouchableOpacity style={{ borderWidth: 1, borderColor: 'white', padding: 10 }} onPress={() => {
                     navigation.navigate("Barberdetail")
-                }}>
+                  }}>
                     <Text style={{ color: 'white', textAlign: 'center', fontFamily: 'Poppins-Regular' }}>Book</Text>
                   </TouchableOpacity>
                 </View>
               </View>
             </View>
+
           </View>
+
         </View>
       </View>
+
 
       <View style={{ flex: 1 }}>
         <View style={{ backgroundColor: '#917659', width: '100%', height: '100%' }}>

@@ -43,7 +43,7 @@ const Barberdetail = () => {
   const [active, setactive] = useState(1);
 
   return (
-    <ScrollView contentContainerStyle={{paddingBottom:30}}>
+    <ScrollView contentContainerStyle={{paddingBottom:60}}>
       <View style={{ flex: 1 }}>
         <View style={{ marginTop: 10, padding: 3, flexDirection: 'row', alignItems: 'center' }}>
           <TouchableOpacity>
@@ -57,8 +57,8 @@ const Barberdetail = () => {
           </TouchableOpacity>
         </View>
 
-        <View style={{ width: Dimensions.get('screen').width, height: Dimensions.get('screen').height - 70, backgroundColor: '#f7eee9', marginTop: 10 }}>
-          <View style={{ borderWidth: 1, borderColor: '#958171', width: Dimensions.get('screen').width - 40, height: Dimensions.get('screen').height - 90, margin: 20, borderRadius: 9 }}>
+        <View style={{ width: '100%', height: '100%' , backgroundColor: '#f7eee9', marginTop: 10 }}>
+          <View style={{ borderWidth: 1, borderColor: '#958171', width: '92%', height: '88%', margin: 20, borderRadius: 9 }}>
             <View style={{ alignItems: 'center', marginTop: 15 }}>
               <FontAwesome5 name="ruler-combined" size={75} color="#857865" />
               <Text style={{ marginTop: 5, color: 'black', fontSize: 20 , fontFamily:'Poppins-Regular'}}>Shaving</Text>
